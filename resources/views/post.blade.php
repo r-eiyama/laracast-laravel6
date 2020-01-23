@@ -18,4 +18,3 @@
     <p>{{ $post->body }}</p>
 </body>
 </html>
-alter user 'root'@'localhost' identified by 'laravel6';

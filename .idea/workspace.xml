@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93f69462-b6ef-4acc-bb8f-4ddd06830686" name="Default Changelist" comment="" />
+    <list default="true" id="93f69462-b6ef-4acc-bb8f-4ddd06830686" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Assignment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AssignmentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_084242_create_posts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_090420_create_assignments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/258afb00-546b-44d4-b930-3106d53e74ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/258afb00-546b-44d4-b930-3106d53e74ee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,10 +56,13 @@
         <item name="laravel6@127.0.0.1" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="laravel6: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="posts: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="assignments: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -142,14 +156,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1WmCEa4Pe7Kfz9eBVTEueazcu6w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -196,12 +215,15 @@
       <updated>1579745271590</updated>
       <workItem from="1579745273784" duration="2233000" />
       <workItem from="1579759328604" duration="1087000" />
-      <workItem from="1579761481132" duration="5038000" />
+      <workItem from="1579761481132" duration="8715000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579764523627">
@@ -218,5 +240,9 @@
     </state>
     <state x="374" y="300" key="com.intellij.ide.util.TipDialog/-266.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1579761481359" />
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog/-266.-1080.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1579759419791" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1579771454130">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/-266.-1080.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1579771454130" />
   </component>
 </project>
