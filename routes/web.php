@@ -13,11 +13,22 @@
 
 Route::get('/', function () {
 //    return "Hello World";
-    return ['foo' => 'bar'];
+//    return ['foo' => 'bar'];
+    return view('welcome');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+
 
 Route::get('/welcome', function () {
     return view('welcome');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 Route::get('test', function () {
