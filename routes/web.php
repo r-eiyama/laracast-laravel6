@@ -18,9 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+//    $article = App\Article::all();
+//    $article = App\Article::take(2)->get();
+    $articles = App\Article::take(3)->latest()->get();
+//    return $article;
+    return view('about', [
+        'articles' => $articles
+    ]);
 });
-
 
 
 Route::get('/welcome', function () {
