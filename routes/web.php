@@ -36,6 +36,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/articles/{article}', 'ArticlesController@show');
+
 Route::get('test', function () {
 //    $name = request('name');
 //    return $name;
