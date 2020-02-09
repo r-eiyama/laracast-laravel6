@@ -18,3 +18,6 @@ http://vdeep.net/laravel-git-clone
  mysql8.0は認証方式を変更する必要がある
 https://qiita.com/ucan-lab/items/3ae911b7e13287a5b917
 
+###  link
+
+http://laracast-laravel6.test/
