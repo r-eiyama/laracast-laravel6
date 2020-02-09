@@ -15,7 +15,7 @@ class ArticlesController extends Controller
     }
 
 
-    public function  show($id)
+    public function show($id)
     {
         $article = Article::find($id);
 
@@ -24,11 +24,28 @@ class ArticlesController extends Controller
 
     public function create()
     {
+        return view('articles.create');
 
     }
 
     public function store()
     {
+        // persist the new article
+        // 受け取ったデータを画面に返す
+//        dump(request()->all());
+
+        // validation
+
+
+        $article = new Article();
+
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/articles');
 
     }
 

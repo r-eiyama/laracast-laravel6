@@ -21,6 +21,8 @@ Released   : 20140225
     <link href="/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/css/app.css" rel="stylesheet" />
 
+    @yield('head')
+
 </head>
 <body>
 <div id="header-wrapper">
