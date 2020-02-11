@@ -17,7 +17,7 @@ class ArticlesController extends Controller
 
     public function show($id)
     {
-        $article = Article::find($id);
+        $article = Article::findorfail($id);
 
         return view('articles.show', ['article' => $article]);
     }
@@ -34,21 +34,8 @@ class ArticlesController extends Controller
         // 受け取ったデータを画面に返す
 //        dump(request()->all());
 
-        // validation
-        request() -> validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
 
-
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        Article::create($this->validateArticle());
 
         return redirect('/articles');
 
@@ -60,14 +47,11 @@ class ArticlesController extends Controller
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id)
+    public function update(Article $article)
     {
-        $article = Article::find($id);
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
 
-        $article->save();
+        $article->update($this->validateArticle());
+
 
         return redirect('/articles/' . $article->id);
 
@@ -76,6 +60,20 @@ class ArticlesController extends Controller
     public function destroy()
     {
 
+    }
+
+    /**
+     * @return array
+     */
+    public function validateArticle()
+    {
+        return request()->validate(
+            [
+                'title' => 'required',
+                'excerpt' => 'required',
+                'body' => 'required'
+            ]
+        );
     }
 
 
