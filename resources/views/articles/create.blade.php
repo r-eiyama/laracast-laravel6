@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('head')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" rel="stylesheet"/>
 @endsection
 
 @section('content')
@@ -16,7 +16,15 @@
                 <label class="label" for="title">Title</label>
 
                 <div class="control">
-                    <input class="input" id="title" name="title" type="text">
+                    <input class="input @error('title') is-danger @enderror"
+                           id="title"
+                           name="title"
+                           type="text"
+                           value="{{old('title')}}"
+                    >
+                    @error('title')
+                        <p class="help is-danger">{{ $errors->first('title') }}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -24,16 +32,31 @@
                 <label class="label" for="excerpt">Excerpt</label>
 
                 <div class="control">
-                    <textarea class="textarea" id="excerpt" name="excerpt"></textarea>
+                    <textarea
+                        class="textarea @error('excerpt') is-danger @enderror"
+                        id="excerpt"
+                        name="excerpt"
+                        value="{{old('excerpt')}}"
+                    ></textarea>
                 </div>
+                @error('excerpt')
+                <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                @enderror
             </div>
 
             <div class="field">
                 <label class="label" for="body">Body</label>
 
                 <div class="control">
-                    <textarea class="textarea" id="body" name="body"></textarea>
+                    <textarea class="textarea @error('body') is-danger @enderror"
+                              id="body"
+                              name="body"
+                              value="{{old('body')}}"
+                    ></textarea>
                 </div>
+                @error('body')
+                <p class="help is-danger">{{ $errors->first('body') }}</p>
+                @enderror
             </div>
 
             <div class="field is-grouped">
@@ -43,8 +66,5 @@
 
             </div>
         </form>
-
-
     </div>
-
 @endsection
