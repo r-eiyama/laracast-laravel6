@@ -23,7 +23,7 @@
                            value="{{old('title')}}"
                     >
                     @error('title')
-                        <p class="help is-danger">{{ $errors->first('title') }}</p>
+                    <p class="help is-danger">{{ $errors->first('title') }}</p>
                     @enderror
                 </div>
             </div>
@@ -56,6 +56,22 @@
                 </div>
                 @error('body')
                 <p class="help is-danger">{{ $errors->first('body') }}</p>
+                @enderror
+            </div>
+
+            <div class="field">
+                <label class="label" for="tags">Tags</label>
+
+                <div class="select is-multiple control">
+                    <select name="tags[]" multiple >
+
+                        @foreach($tags as $tag)
+                            <option value="{{ $tag->id }}">{{$tag->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                @error('tags')
+                <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>
 

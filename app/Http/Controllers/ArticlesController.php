@@ -30,18 +30,24 @@ class ArticlesController extends Controller
 
     public function create()
     {
-        return view('articles.create');
-
+        return view('articles.create', ['tags' => Tag::all() ]);
     }
 
     public function store()
     {
         // persist the new article
         // 受け取ったデータを画面に返す
-//        dump(request()->all());
+//        dd(request()->all());
 
+        $this->validateArticle();
 
-        Article::create($this->validateArticle());
+        $article = new Article(request(['title','excerpt', 'body']));
+        $article->user_id = 1;
+        $article->save();
+
+        $article->tags()->attach(request('tags'));
+
+//        Article::create($this->validateArticle());
 
         return redirect(route('articles.index'));
 
@@ -77,7 +83,8 @@ class ArticlesController extends Controller
             [
                 'title' => 'required',
                 'excerpt' => 'required',
-                'body' => 'required'
+                'body' => 'required',
+                'tags' => 'exists:tags,id',
             ]
         );
     }
