@@ -1,10 +1,26 @@
-
 @extends('layout')
 
 @section('header')
-    <h1>Home Page</h1>
-    @endsection
+@endsection
 
 @section('content')
 
-    @endsection
+    <div>
+        @auth
+            <a class="h3" href="{{ url('/home') }}">Home</a>
+            <p>ログイン中です。 {{ auth()->user()->name }}さん</p>
+        @else
+            <a class="h3" href="{{route('login')}}">Login</a>
+
+            @if (Route::has('register'))
+                <a class="h3 pl-3"  href="{{ route('register') }}">Register</a>
+            @endif
+        @endauth
+
+        @guest
+            <p>
+                ログインまたは登録してください
+            </p>
+            @endguest
+    </div>
+@endsection
