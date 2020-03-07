@@ -32,9 +32,9 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
+
 
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 Route::post('/articles', 'ArticlesController@store');
